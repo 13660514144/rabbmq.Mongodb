@@ -1,0 +1,349 @@
+﻿body{
+    text-align:center;
+    font: 15px 微软雅黑, Helvetica, Arial, sans-serif;
+}     
+       input[type=checkbox],input[type=radio] {
+            -webkit-appearance: none;
+            appearance: none;
+            outline: none;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            vertical-align: center;
+            background: #fff;
+            border: 1px solid #ccc;
+            position: relative;margin-top:15px;
+            
+        }
+
+        input[type=checkbox]:checked::after {
+            content: "\2713";
+            display: block;
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: 0;
+            bottom: 0;
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            border: 1px solid #ddd;
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+        }
+       input[type=radio]:checked::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 0;
+            bottom: 0;
+            width: 13px;
+            height: 13px;
+            background-color: green;
+        }
+        input[type=radio], input[type=radio]:checked::after {
+            border-radius: 50%;
+        }
+.TitlClose {
+    width: 100%;
+    background-color: #eeebeb;
+    height: 30px;
+    font-size: 25px;
+    text-align: right;
+}
+.ElementHidd {
+    display: none;
+}
+.ElementShow {
+    display:block;
+}
+    .rowbg:hover {
+        background-color: #F3F3F3;
+    }
+.bootstrap-frm {
+    width:95%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 99%;
+    background: #FFF;
+    padding: 20px 30px 20px 30px;
+    font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #888;
+    text-shadow: 1px 1px 1px #FFF;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    display: inline-block;
+}
+.bootstrap-frm h1 {
+	font: 25px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 0px 0px 10px 20px;
+	display: block;
+	border-bottom: 1px solid #DADADA;
+	margin: -10px -30px 10px -30px;
+	color: #888;
+}
+.bootstrap-frm h1>span {
+	display: block;
+	font-size: 16px;font-weight:bold;
+}
+    .bootstrap-frm label {
+        font: 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        /*display: block;*/
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        vertical-align: middle;
+        margin: 10px 0;
+        width: 33%;
+        float: left;
+    }
+
+.bootstrap-frm label>span {
+    font: 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	float: left;
+	width: 34%;
+	text-align: right;
+	padding-right: 10px;
+	margin-top: 5px;
+	color: #333;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;margin-right:3px;
+}
+        .bootstrap-frm label > li {
+            list-style-type: none;
+            font: 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+            float: left;
+            width: 64%;
+            text-align: left;
+            padding-right: 10px;
+            margin-top: 10px;
+            color: #333;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        .bootstrap-frm label > b {
+            list-style-type: none;
+            font: 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+            float: left;
+            width: 64%;
+            word-wrap: break-word;
+            text-align: left;
+            padding-right: 10px;
+            margin-top: 5px;
+            color: #333;
+        }
+    .bootstrap-frm input[type="text"], .bootstrap-frm input[type="password"], .bootstrap-frm input[type="file"], .bootstrap-frm textarea, .bootstrap-frm select {
+        padding: 5px;
+        border: solid 1px #E5E5E5;
+        outline: 0;
+        font: normal 15px/100% Verdana, Tahoma, sans-serif;
+        width: 64%;
+        background: #FFFFFF url('bg_form.png') left top repeat-x;
+        background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+        background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+        box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+        -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+        -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    }
+
+.bootstrap-frm select {
+    font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: #FFF url('down-arrow.png') no-repeat right;
+	background: #FFF url('down-arrow.png') no-repeat right;
+	appearance:none;
+	-webkit-appearance:none;
+	-moz-appearance: none;
+	text-indent: 0.01px;
+	text-overflow: '';
+	width: 64%;
+	height: 35px;
+	line-height:15px;padding: 5px;
+}
+.bootstrap-frm textarea{
+    font: 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	height:100px;
+	padding: 5px 0px 0px 5px;
+	width: 64%;resize:none;
+}
+    .bootstrap-frm .button {
+        font: 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: #B9CCD2;
+        border: 1px solid #CCC;
+        padding: 10px 25px 10px 25px;
+        color: #333;
+        border-radius: 4px;
+    }
+        .bootstrap-frm .button:hover {
+            color: #333;
+            background-color: #666666;
+            border-color: #ADADAD;
+        }
+.btn-bottom .button:hover {
+    color: #333;
+    background-color: #666666;
+    border-color: #ADADAD;
+}
+.btn-bottom {
+    font: 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*background: #FFF;*/
+    background: #666666;
+    border: 1px solid #CCC;
+    padding: 10px 25px 10px 25px;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-head {
+    font: 16px 微软雅黑, Helvetica, Arial, sans-serif;
+    /*background: #FFF;*/
+    background: #666666;
+    border: 1px solid #CCC;
+    padding: 6px 15px 6px 15px;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#poptitle {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    left: 1px;
+    text-align: center;
+    background-color: #EEEEEE;
+    padding: 2px;
+    font: 14px 微软雅黑, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    left: 1px;
+    text-align: center;
+    background-color: #F5F5F5;
+    padding: 2px;
+    font: 14px 微软雅黑, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+#btnhead{
+    position:fixed; top:1px; width:100%;left:1px;height:45px;line-height:45px;
+    text-align:left;float:left;background-color:#EEEEEE;padding:2px;
+    font: 14px 微软雅黑, Helvetica, Arial, sans-serif;
+    font-weight:bold;
+}
+#comment{
+    height:100%;width:100%;margin-top:30px;margin-bottom:30px;
+}
+form{
+    margin-top:30px;
+    border:1px solid;margin:0 auto;
+}
+.errtitle {
+    position: fixed;
+    margin-top: 0px;
+    width: 400px;
+    height: 30px;
+    margin-left: 0px;
+    text-align: right;
+    background-color: #A9A9A9;
+    padding: 2px;
+    font: 14px 微软雅黑, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    z-index: 5004;
+    color: white;
+}
+.clstitle {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 26px;
+    border: 1px solid #3c3939;
+    float: right;
+    text-align: center;
+    cursor: pointer;
+}
+.spanmsg {
+    width: 400px;
+    height: 30px;
+    line-height: 30px;
+    padding: 20px;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-overflow: ellipsis;
+}
+.popmsg {
+    font: 18px 微软雅黑, Helvetica, Arial, sans-serif;
+    border: 1px solid #CCC;
+    /*padding: 10px 20px 10px 20px;*/
+    color: #006400;
+    background-color: #EEEEEE;
+    font-weight: bold;
+    width: 400px;
+    height: 120px;
+    line-height: 120px;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    z-index: 5003;
+    position: fixed;
+    margin: -60px 0 0 -200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
+.onlyload {
+    font: 18px 微软雅黑, Helvetica, Arial, sans-serif;
+    border: 0px;
+    /*padding: 10px 20px 10px 20px;*/
+    font-weight: bold;
+    width: 400px;
+    height: 120px;
+    line-height: 120px;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    z-index: 5003;
+    position: fixed;
+    margin: -60px 0 0 -200px;
+}
+.configmsg {
+    font: 18px 微软雅黑, Helvetica, Arial, sans-serif;
+    border: 1px solid #CCC;
+    /*padding: 10px 20px 10px 20px;*/
+    color: #006400;
+    background-color: #EEEEEE;
+    font-weight: bold;
+    width: 400px;
+    height: 160px;
+    line-height: 160px;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    z-index: 5003;
+    position: fixed;
+    margin: -80px 0 0 -200px;
+}
+.configfooter {
+    position: fixed;
+    margin-bottom: 0px;
+    width: 400px;
+    padding: 1px;
+    height: 46px;
+    line-height: 46px;
+    margin-left: 0px;
+    text-align: center;
+    background-color: #DCDCDC;
+    z-index: 5005;
+}
+  

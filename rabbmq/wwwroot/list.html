@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>lxzpower</title>
+    <link href="css/Msg.css" rel="stylesheet">
+	<link href="css/Owner.css" rel="stylesheet">
+<style type="text/css">
+table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:14px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;	
+}
+table.gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+table.gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+</style>
+<script>
+	var rows=1;
+	var pages = 20;
+	var lastid = '';
+	var PageMothed = 'first';
+	var PostHeader,BaseUrl;
+	var http = 'api/ListPage/GetPage';
+	var SearchField = [];
+	var OnwerFields;
+	PostHeader={};
+ </script>
+	<script src="jvs/ReqServer.js"></script>	
+	<script src="jvs/client.js"></script>
+	<script src="jvs/BtnImint.js"></script> 
+</head>
+
+<body>
+<center>
+<button class="button button2"  id="btnmsg">查询</button>
+<!--<input type="text" id="dev" name="dev"/>-->
+</center>
+<table id="Ver" align="center" class="gridtable">
+	<!--<tr>
+		<th>City</th>
+		<th>Ioc</th>
+		<th>Pop</th>
+		<th>State</th>
+		<th>ID</th>
+	</tr>-->
+<tr>
+    <td colspan="8" align="center">
+	<button class="button button2"  id="GetNextPage" style="display:none">下一页</button>
+	<button class="button button2"  id="GetPrePage" style="display:none">上一页</button>
+	</td>
+</tr>
+</table>
+<script>
+	var objTb=document.getElementById('Ver');
+	var NextPage=document.getElementById('GetNextPage');
+	var PrePage = document.getElementById('GetPrePage');
+	function CreateBtn(nextflg, preflg, field) {
+		var len = field.length;
+		var tr = objTb.insertRow();
+		var td = tr.insertCell();
+		td.colSpan = ""+len+"";
+		td.align = "center";
+		var tdstr = "";
+		if (nextflg == true) {
+            tdstr += '<button class="button button2"  id="GetNextPage" style="margin:5px;">下一页</button>';
+		}
+        if (preflg == true) {
+            tdstr += '<button class="button button2"  id="GetPrePage" style="margin:5px;">上一页</button>';
+		}
+		td.innerHTML = tdstr;
+        Frm_Imint._BtnImint();
+	}
+    function btnmsg_Click()
+	{		
+        //GetFirstPage();
+        _CreatAudit('CurrencySearch.html');
+	}
+	function SetData()
+	{
+		var o = {
+            IdCode: '61bbec09b892f65e6042d836',
+			Role: '',
+			DelFlg:1,
+            GroupFlg: '',
+            LastId: lastid,
+			PageNextOrPre: PageMothed,
+            WhereCollection: SearchField,
+			rows:20,
+			pages: pages
+		};
+		return o;
+	}
+    function GetFirstPage() {
+		lastid = '';
+        PageMothed = 'first';
+        _AsyncRequest._AsyncPost(SetData(), 'CallMsg', http, true, PostHeader, 'JSON');
+    }
+    function GetNextPage_Click()
+	{
+        var L = objTb.rows.length - 2;
+        if (PageMothed == 'next' || PageMothed == 'first') {
+			lastid = objTb.rows[L].cells[0].innerText;
+		}
+		else {
+            lastid = objTb.rows[1].cells[0].innerText;
+		}
+	
+		PageMothed = 'next';	
+		_AsyncRequest._AsyncPost(SetData(), 'CallMsg', http,true,PostHeader,'JSON');
+	}
+    function GetPrePage_Click()
+	{
+        var L = objTb.rows.length - 2;
+        if (PageMothed == 'pre') {
+            lastid = objTb.rows[L].cells[0].innerText;
+        }
+        else {
+            lastid = objTb.rows[1].cells[0].innerText;
+		}
+        
+		PageMothed = 'pre';        
+		_AsyncRequest._AsyncPost(SetData(), 'CallMsg', http,true,PostHeader,'JSON');
+	}
+	function CallMsg(data)
+	{	
+        _closeiframe();
+		_ErrMsg(data.message);
+		if(data.code=200)
+		{
+			buildTtb(data);
+		}
+	}
+
+    function buildTtb(data)
+	{		
+		var JsonArray = data.data;
+		var fields = data.fieldsinfo.fields;
+		OnwerFields = fields;
+		var len = JsonArray.length;
+        DelRow();
+        ShowTitle(fields);
+        if (len>0)
+		{
+			for(var x=0;x<len;x++)
+			{                
+                var row = objTb.insertRow();
+				var json=JsonArray[x];
+				for(var item in json){
+					var cell = row.insertCell();
+					GetFieldAttrib(fields, item, json[item], cell);				  
+				}
+			}
+            switch (PageMothed) {
+				case 'next':
+					if (pages == len) CreateBtn(true, true, fields);
+					if (pages > len) CreateBtn(false, true, fields);
+                    break;
+                case 'pre':
+					if (pages == len) CreateBtn(true, true, fields);
+					if (pages > len) CreateBtn(true, false, fields);
+                    break;
+                case 'first':
+                    if (pages == len) CreateBtn(true, true, fields);
+                    break;
+            }            
+		}	
+	}
+	function DelRow()
+	{		
+        var len = objTb.rows.length-1;
+		for(var x=len;x>=0;x--)
+		{
+            objTb.deleteRow(x);
+		}
+	}
+	function ShowTitle(FieldArray) {
+		var len = FieldArray.length;
+        var row = objTb.insertRow();
+		for (var x = 0; x < len; x++) {			
+			var Json = FieldArray[x];
+            var cell = row.insertCell();
+            for (var Key in Json) {               
+                if (Key=='name') cell.innerText = Json[Key];
+                if (Key =='ifhidden') {
+					if (Json[Key] == true) {
+						cell.style.display = 'none';
+					}
+				}				
+            }
+		}               
+	}
+
+	function GetFieldAttrib(fields, key, value, cell) {
+        var len = fields.length;
+        for (var x = 0; x < len; x++) {
+			var Json = fields[x];
+			if (Json.name == key) {
+				cell.innerText = (Json.type == 'OBJ') ? JSON.stringify(value) : value;
+				if (Json.ifhidden == true) {
+					cell.style.display = 'none';
+				}
+				break;
+			}
+        }
+	}
+    function GetFieldType(KeyName) {
+		var len = OnwerFields.length;
+		var str = '';
+        for (var x = 0; x < len; x++) {
+            var Json = OnwerFields[x];
+			if (Json.name == KeyName) {
+				str=Json.type;
+				break;
+            }
+		}
+		return str;
+    }
+	Frm_Imint._BtnImint();
+    GetFirstPage();
+</script>
+</body>
+</html>

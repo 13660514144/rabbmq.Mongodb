@@ -1,0 +1,58 @@
+﻿body {
+    font-size: 18px;
+}
+
+.ss {
+    background-color: #F5F5F5;
+    text-align: left;
+    border: 1px solid #ccc;
+    /*position: fixed;*/
+    margin-top: 50px;
+    width: 100%;
+    
+    overflow-y: auto;
+    
+    margin-right: auto;
+    margin-left: auto;
+    /*float: left;*/
+    /*background-color: #EEEEEE;*/
+    padding: 2px;
+    font: 18px 微软雅黑, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+
+dl ul {
+    display: block;
+}
+
+dd li {
+    list-style-type: none;
+    margin-left: 30px;
+    display: block;
+}
+
+   dd li:hover {
+        color: #800000;
+    }
+
+dl ul:hover {
+    color: #800000;
+}
+
+.fg {
+    font-weight: bold;
+    color: #000080;
+    background-color: #FFFAF0;
+    display: block;
+}
+
+.fgs {
+    font-weight: normal;
+    color: black;
+    display: block;
+}
+
+span {
+    cursor: pointer;
+}

@@ -1,0 +1,135 @@
+        * {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        a {
+            text-decoration: none;
+        }
+ 
+        #conter {
+            width: 100%;
+            margin: auto;
+        }
+ 
+        #help-left {
+            width: 180px;
+            font-family: 'microsoft YaHei';
+            float: left;
+        }
+ 
+        .menu {
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+ 
+        .menu:last-child {
+            border-bottom: 1px solid #ccc;
+        }
+ 
+        .menu summary {
+            height: 40px;
+            line-height: 40px;
+            text-indent: 10px;
+            outline: none;
+            font-size: 14px;
+            font-weight: 700;
+            border-top: 1px solid #ddd;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FEFEFE), color-stop(1, #CCCCCC));
+            cursor: pointer;
+        }
+　　/*使用下面这个，可以去掉小三角，神奇的菜单就可以完成了*/
+        .menu summary::-webkit-details-marker {
+            display: none;
+        }
+ 
+         
+        .menu summary:before {
+            content: "+";
+            
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+ 
+        .menu[open] summary:before {
+            content: "-";
+            
+        }
+ 
+        .menu ul {
+            padding: 10px 0;
+        }
+ 
+        .menu ul li {
+            list-style: none;
+            text-indent: 25px;
+            font-size: 14px;
+            height: 30px;
+            line-height: 30px;
+        }
+ 
+        .menu ul li a {
+            display: block;
+            color: #666;
+        }
+ 
+        .menu ul li a:hover {
+            text-decoration: underline;
+        }
+   
+       .row{
+         width:100%;
+         height:100%;
+         border:1px #CCC;
+         display:flex;flex-direction: row;
+        }
+        .col{
+            /*width:500px;*/
+            height:200px;
+            background: #fff;padding:10px;margin:10px;
+			box-shadow:0px 0px  8px 0px #d0d0d0;float:left;overflow:hidden;
+        }
+		.divtitle{border:0px;width:100%;font-family:"Microsoft YaHei";font-size:150%;text-align:left;padding:10px;}
+		.divtitle2{border:0px;width:100%;font-family:"Microsoft YaHei";
+		font-size:120%;text-align:center;color:white;background-color:#3D87FF;
+		margin:0px;padding:5px;}		
+        
+ 
+
+		body {background:#F2F2F7;}	
+ 
+		 ::-webkit-scrollbar { /* 血槽宽度 */
+			width: 0px; height: 0px;
+		}
+		 
+		::-webkit-scrollbar-thumb { /* 拖动条 */
+			background-color: rgba(0,0,0,.3);
+			border-radius: 0px;
+		}
+		 
+		::-webkit-scrollbar-track { /* 背景槽 */
+			background-color: #fff;
+			border-radius: 0px;
+		}
+		 .box{
+		 /*width: 500px;*/
+		 height: 180px;margin-top:30px;
+		 }
+		 .box ul{
+		 display: flex;
+		 flex-direction: column;
+		 justify-content: center;
+		 }
+		  
+		 .box ul li{
+		 list-style: none;
+		 margin: 0 auto;font-family:"Microsoft YaHei";font-size:90%;
+		 } 	
+		.ef{
+		width:80%;float:left;height:100%;background-color:#fff;text-align:center;
+		} 
+		.mef{width:180px;float: left;height: 100%;background-color: #FFF;}

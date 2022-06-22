@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+
+    <title>Form Search</title>
+    <link rel="stylesheet" id="templatecss" type="text/css" href="css/Form.css">
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css" />
+    <link rel="stylesheet" id="btn5" type="text/css" href="BtnCSS/set_5.css">
+    <style type="text/css">
+    </style>
+    <script>
+        var _PageStart = 0;
+        var Win = parent;
+        Win.SearchField.length = 0;
+	    document.write('<script src="jvs/clientpack.js?v='+Math.round(Math.random()*10000)+'"><\/script>');
+        document.write('<script src="jvs/ReqServer.js?v='+Math.round(Math.random()*10000)+'"><\/script>');
+        document.write('<script src="jvs/client.js?v=' + Math.round(Math.random()*10000) + '"><\/script>');
+        /*document.write('<script src="jvs/PatePaging.js?v='+Math.round(Math.random()*10000)+'"><\/script>');*/
+        document.write('<script src="jvs/SearchBuild.js?v='+Math.round(Math.random()*10000)+'"><\/script>');
+        document.write('<script src="jvs/BtnImint.js?v=' + Math.round(Math.random() * 10000) + '"><\/script>');
+    </script>
+
+    <script type="text/javascript" src="Jqjvs/jquery.min.js"></script>
+    <script type="text/javascript" src="Jqjvs/moment.min.js"></script>
+    <script type="text/javascript" src="Jqjvs/daterangepicker.min.js"></script>
+    <script type="text/javascript">
+        Element.prototype.insertAfter = function (newNode, targetNode) {
+            //获取指定节点的下一个兄弟节点和父节点，为使用insertBefor()做准备
+            var nextNode = targetNode.nextSibling;
+            var fatherNode = targetNode.parentNode;
+            //调用insertBefor()将新节点添加到指定节点的下一个兄弟节点的前面
+            //以此实现将新节点添加到指定节点后后一位
+            fatherNode.insertBefore(newNode, nextNode);
+        }
+
+        function QueryList_Click() {
+            BuildSearch.PackParas(document.getElementsByName('form1')[0]);
+            Win.GetFirstPage();
+            Win._closeiframe();
+        }
+        function QueryClose_Click() {
+            //Win._Form_Serialize.BtnObjStatus(Win._CurrentBtn, false);
+            Win._closeiframe();
+        }
+        
+    </script>
+
+</head>
+<body>
+    <div id="comment" style="width:97%;">
+    <div id="poptitle">
+        <div style="width:26px;height:26px;line-height:26px;font-size:26px;border:1px solid #3c3939;float:right;text-align:center;cursor:pointer;" onclick="_TitleClsWin()">X</div>
+    </div>
+    <form method="post" class="bootstrap-frm" name="form1" id="FrmNode">
+        <!--<label style="width:400px;">
+        <span> 查询下级</span>
+        <input id="ClassFlg" type="checkbox" name="ClassFlg" value="1" />
+        </label>-->
+        <label style="width:400px;">
+            <span> 模糊查询</span>
+            <input id="VagueFlg" type="checkbox" name="VagueFlg" value="1" />
+        </label>
+
+    </form>
+    </div>
+    <div id="footer">        
+        <button class="set_5_button4" id="QueryList">提交</button>
+    </div>
+    <script type="text/javascript" src="jvs/DateCrt.js"></script>
+    <script type="text/javascript">        
+        Frm_Imint._BtnImint();
+        BuildSearch.CreateMongo(Win.OnwerFields);
+    </script>
+</body>
+</html>

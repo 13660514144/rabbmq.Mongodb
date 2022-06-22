@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rabbmq", "rabbmq\rabbmq.csproj", "{336602AA-D283-412E-A1C2-6CDE22CF2A77}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongodbLibrary", "MongodbLibrary\MongodbLibrary.csproj", "{EA41B84B-C09B-4ECB-A99A-42E1EA9A78E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xrpc-Beetlx", "Xrpc-Beetlx\Xrpc-Beetlx.csproj", "{2AD6BD9E-BF81-47AF-A2A7-E343C37EA359}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{336602AA-D283-412E-A1C2-6CDE22CF2A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{336602AA-D283-412E-A1C2-6CDE22CF2A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{336602AA-D283-412E-A1C2-6CDE22CF2A77}.Debug|x64.ActiveCfg = Debug|x64
+		{336602AA-D283-412E-A1C2-6CDE22CF2A77}.Debug|x64.Build.0 = Debug|x64
+		{336602AA-D283-412E-A1C2-6CDE22CF2A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{336602AA-D283-412E-A1C2-6CDE22CF2A77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{336602AA-D283-412E-A1C2-6CDE22CF2A77}.Release|x64.ActiveCfg = Release|x64
+		{336602AA-D283-412E-A1C2-6CDE22CF2A77}.Release|x64.Build.0 = Release|x64
+		{EA41B84B-C09B-4ECB-A99A-42E1EA9A78E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA41B84B-C09B-4ECB-A99A-42E1EA9A78E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA41B84B-C09B-4ECB-A99A-42E1EA9A78E9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EA41B84B-C09B-4ECB-A99A-42E1EA9A78E9}.Debug|x64.Build.0 = Debug|Any CPU
+		{EA41B84B-C09B-4ECB-A99A-42E1EA9A78E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA41B84B-C09B-4ECB-A99A-42E1EA9A78E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA41B84B-C09B-4ECB-A99A-42E1EA9A78E9}.Release|x64.ActiveCfg = Release|Any CPU
+		{EA41B84B-C09B-4ECB-A99A-42E1EA9A78E9}.Release|x64.Build.0 = Release|Any CPU
+		{2AD6BD9E-BF81-47AF-A2A7-E343C37EA359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD6BD9E-BF81-47AF-A2A7-E343C37EA359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD6BD9E-BF81-47AF-A2A7-E343C37EA359}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2AD6BD9E-BF81-47AF-A2A7-E343C37EA359}.Debug|x64.Build.0 = Debug|Any CPU
+		{2AD6BD9E-BF81-47AF-A2A7-E343C37EA359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD6BD9E-BF81-47AF-A2A7-E343C37EA359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AD6BD9E-BF81-47AF-A2A7-E343C37EA359}.Release|x64.ActiveCfg = Release|Any CPU
+		{2AD6BD9E-BF81-47AF-A2A7-E343C37EA359}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F7D8E48-0F4C-422F-8983-78FFF7B1DF92}
+	EndGlobalSection
+EndGlobal

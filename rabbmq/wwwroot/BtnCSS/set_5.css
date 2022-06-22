@@ -1,0 +1,70 @@
+/* button 1*/
+
+.set_5_button {
+    background: #666;
+    color: white;
+    overflow: hidden;
+    z-index: 1;
+    /*font-weight: bold;*/
+    line-height: 45px;
+    margin-right: 0.5em;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    width: auto;font-size:17px;
+}
+.set_5_button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500%;
+  height: 1000%;
+  background: #838383;
+  z-index: -1;
+  transform-origin: 0% 0%;
+  transform: translateX(calc(20% - 25px)) translateY(10%) rotate(-45deg);
+  /*transform: translateY(10%) translateX(16%) rotate(-45deg);*/
+  transition: transform .3s;
+}
+.set_5_button:hover::after {
+  transform: translateY(10%) translateX(-25px) rotate(-45deg);
+}
+/* button 4*/
+
+.set_5_button4 {
+    background: #FFFAF0;
+    color: #252b2d;
+    overflow: hidden;
+    z-index: 1;
+    /*font-weight: bold;*/
+    line-height: 45px;
+    margin-right: 0.5em;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    width: auto;
+    font-size: 17px;
+}
+
+    .set_5_button4:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 500%;
+        height: 1000%;
+        background: #cce0e7;
+        z-index: -1;
+        transform-origin: 0% 0%;
+        transform: translateX(calc(20% - 25px)) translateY(10%) rotate(-45deg);        
+        transition: transform .3s;
+    }
+
+    .set_5_button4:hover::after {
+        transform: translateY(10%) translateX(-25px) rotate(-45deg);
+    }  
